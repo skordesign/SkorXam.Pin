@@ -27,4 +27,28 @@ It dependent to: [Plugin.CrossPlatformTintedImage](https://github.com/shrutinamb
 #### Demo
 ![Demo](Demo.png)
 
+### Properties
+```csharp
+ - Spacing: Spacing from dots to keyboard
+ - DotSpacing: Spacing between dots
+ - PinLength: ...
+ - DotColor: ...
+ - DotSize: ...
+ - DotEmptyColor: Dot's color when unfill
+ - DotBorderColor: (New)
+ - PinSubmitCommand: Command raise when full fill dots
+ - Pin: Pin value
+ - ButtonSize: Size of buttons 1-9, clear and backspace
+ - ButtonCornerRadius: Button corner radius (New)
+ - ButtonColor: Color of buttons 1-9, clear and backspace
+ - ButtonTextColor: TextColor of buttons 1-9
+ - ClearButtonImageSource: ImageSource for Clear button (New)
+ - DeleteButtonImageSource: ImageSource for Backspace button (New)
+```
+
+### Events
+```csharp
+ - PinChanged : Raise when Pin has changed
+ - PinSubmit: Raise when full fill pin
+```
 ##### Note: If you have any issue with this package, feel free to create issue on this repository.

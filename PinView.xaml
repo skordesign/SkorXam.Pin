@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pin="clr-namespace:SkorXam.Pin"
+             mc:Ignorable="d"
+             x:Name="PinViewElement"
+             x:Class="SkorXam.Pin.PinView">
+    <ContentView.Resources>
+        <pin:LengthToListConverter x:Key="LengthToListConverter"/>
+        <pin:DivideConverter x:Key="DivideConverter"/>
+    </ContentView.Resources>
+  <ContentView.Content>
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand"
+                     Orientation="Vertical"
+                     Spacing="{Binding Source={x:Reference PinViewElement}, Path=Spacing}">
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand"
+                         x:Name="stackLayout"
+                         BindableLayout.ItemsSource="{Binding Source={x:Reference PinViewElement}, Path=PinLength, Converter={StaticResource LengthToListConverter}}"
+                         Spacing="{Binding Source={x:Reference PinViewElement}, Path=DotSpacing}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=DotSize}"
+                               HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=DotSize}"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"
+                               CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=DotSize}"
+                               BorderColor="{Binding Source={x:Reference PinViewElement}, Path=DotBorderColor}"
+                               Margin="0"
+                               Padding="0"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            <Grid VerticalOptions="CenterAndExpand"
+                  HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button1_Clicked"
+                        Text="1"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button2_Clicked"
+                        Text="2"
+                        Grid.Column="1"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button3_Clicked"
+                        Text="3"
+                        Grid.Column="2"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button4_Clicked"
+                        Text="4"
+                        Grid.Row="1"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button5_Clicked"
+                        Text="5"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button6_Clicked"
+                        Text="6"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button7_Clicked"
+                        Text="7"
+                        Grid.Row="2"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button8_Clicked"
+                        Text="8"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button9_Clicked"
+                        Text="9"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Button0_Clicked"
+                        Text="0"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Clear_Clicked"
+                        ImageSource="{Binding Source={x:Reference PinViewElement}, Path=ClearButtonImageSource}"
+                        Grid.Row="3"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+                <Button VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="Delete_Clicked"
+                        ImageSource="{Binding Source={x:Reference PinViewElement}, Path=DeleteButtonImageSource}"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        WidthRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize}"
+                        CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=ButtonCornerRadius}"
+                        TextColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonTextColor}"
+                        BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=ButtonColor}"
+                        FontSize="{Binding Source={x:Reference PinViewElement}, Path=ButtonSize, Converter={StaticResource DivideConverter}, ConverterParameter='2'}"/>
+            </Grid>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
