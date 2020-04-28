@@ -28,8 +28,9 @@
                                HeightRequest="{Binding Source={x:Reference PinViewElement}, Path=DotSize}"
                                VerticalOptions="CenterAndExpand"
                                HorizontalOptions="CenterAndExpand"
-                               CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=DotSize}"
+                               CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=DotCornerRadius}"
                                BorderColor="{Binding Source={x:Reference PinViewElement}, Path=DotBorderColor}"
+                               HasShadow="{Binding Source={x:Reference PinViewElement}, Path=DotHasShadow}"
                                Margin="0"
                                Padding="0"/>
                     </DataTemplate>

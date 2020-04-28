@@ -139,7 +139,22 @@ namespace SkorXam.Pin
         public static readonly BindableProperty DeleteButtonImageSourceProperty =
             BindableProperty.Create(nameof(DeleteButtonImageSource), typeof(ImageSource), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
                 defaultValue: ImageSource.FromResource("SkorXam.Pin.backspace.png"));
-
+        public bool DotHasShadow
+        {
+            get => (bool)GetValue(DotHasShadowProperty);
+            set => SetValue(DotHasShadowProperty, value);
+        }
+        public static readonly BindableProperty DotHasShadowProperty =
+            BindableProperty.Create(nameof(DotHasShadow), typeof(bool), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
+                defaultValue: false);
+        public double DotCornerRadius
+        {
+            get => (double)GetValue(DotCornerRadiusProperty);
+            set => SetValue(DotCornerRadiusProperty, value);
+        }
+        public static readonly BindableProperty DotCornerRadiusProperty =
+            BindableProperty.Create(nameof(DotCornerRadius), typeof(double), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
+                defaultValue: 12d);
         #region Methods
         private static void OnPinChanged(BindableObject bindable, object oldValue, object newValue)
         {
