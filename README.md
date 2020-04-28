@@ -20,10 +20,6 @@ Nuget: [SkorXam.Pin](https://www.nuget.org/packages/SkorXam.Pin/)
 </ContentPage>
 
 ```
-
-#### Reference 
-It dependent to: [Plugin.CrossPlatformTintedImage](https://github.com/shrutinambiar/xamarin-forms-tinted-image)
-
 #### Demo
 ![Demo](Demo.png)
 
