@@ -40,6 +40,10 @@ Nuget: [SkorXam.Pin](https://www.nuget.org/packages/SkorXam.Pin/)
  - ButtonTextColor: TextColor of buttons 1-9
  - ClearButtonImageSource: ImageSource for Clear button (New)
  - DeleteButtonImageSource: ImageSource for Backspace button (New)
+ - DotCornerRadius: Pin dot radius (New)
+ - DotHasShadow: Pin dot shadow (New)
+ - ButtonFontsize: Button font size (New)
+ - ButtonVerticalSpacing, ButtonHorizontalSpacing (New)
 ```
 
 ### Events

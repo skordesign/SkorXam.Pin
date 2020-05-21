@@ -99,6 +99,30 @@ namespace SkorXam.Pin
         public static readonly BindableProperty ButtonSizeProperty =
             BindableProperty.Create(nameof(ButtonSize), typeof(double), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
                 defaultValue: 64d);
+        public double ButtonVerticalSpacing
+        {
+            get => (double)GetValue(ButtonVerticalSpacingProperty);
+            set => SetValue(ButtonVerticalSpacingProperty, value);
+        }
+        public static readonly BindableProperty ButtonVerticalSpacingProperty =
+            BindableProperty.Create(nameof(ButtonVerticalSpacing), typeof(double), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
+                defaultValue: 6d);
+        public double ButtonHorizontalSpacing
+        {
+            get => (double)GetValue(ButtonHorizontalSpacingProperty);
+            set => SetValue(ButtonHorizontalSpacingProperty, value);
+        }
+        public static readonly BindableProperty ButtonHorizontalSpacingProperty =
+            BindableProperty.Create(nameof(ButtonHorizontalSpacing), typeof(double), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
+                defaultValue: 6d);
+        public double ButtonFontsize
+        {
+            get => (double)GetValue(ButtonFontsizeProperty);
+            set => SetValue(ButtonFontsizeProperty, value);
+        }
+        public static readonly BindableProperty ButtonFontsizeProperty =
+            BindableProperty.Create(nameof(ButtonFontsize), typeof(double), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
+                defaultValue: 32d);
         public int ButtonCornerRadius
         {
             get => (int)GetValue(ButtonCornerRadiusProperty);
