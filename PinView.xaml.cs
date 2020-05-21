@@ -179,6 +179,14 @@ namespace SkorXam.Pin
         public static readonly BindableProperty DotCornerRadiusProperty =
             BindableProperty.Create(nameof(DotCornerRadius), typeof(double), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
                 defaultValue: 12d);
+        public double ButtonOpacity
+        {
+            get => (double)GetValue(ButtonOpacityProperty);
+            set => SetValue(ButtonOpacityProperty, value);
+        }
+        public static readonly BindableProperty ButtonOpacityProperty =
+            BindableProperty.Create(nameof(ButtonOpacity), typeof(double), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
+                defaultValue: 1d);
         #region Methods
         private static void OnPinChanged(BindableObject bindable, object oldValue, object newValue)
         {
