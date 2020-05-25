@@ -220,7 +220,7 @@ namespace SkorXam.Pin
             if(isFill)
                 frame.BackgroundColor = DotColor;
             else
-                frame.BackgroundColor = Color.White;
+                frame.BackgroundColor = DotEmptyColor;
         }
 
         private void Button1_Clicked(object sender, EventArgs e)

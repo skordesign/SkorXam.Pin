@@ -31,6 +31,7 @@
                                CornerRadius="{Binding Source={x:Reference PinViewElement}, Path=DotCornerRadius}"
                                BorderColor="{Binding Source={x:Reference PinViewElement}, Path=DotBorderColor}"
                                HasShadow="{Binding Source={x:Reference PinViewElement}, Path=DotHasShadow}"
+                               BackgroundColor="{Binding Source={x:Reference PinViewElement}, Path=DotEmptyColor}"
                                Margin="0"
                                Padding="0"/>
                     </DataTemplate>
