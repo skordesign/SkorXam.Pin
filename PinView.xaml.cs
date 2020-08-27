@@ -191,7 +191,7 @@ namespace SkorXam.Pin
         private static void OnPinChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var pinView = (bindable as PinView);
-            pinView.RenderPin(newValue?.ToString());
+            pinView.RenderPin(newValue?.ToString() ?? string.Empty);
             pinView?.PinChanged?.Invoke(pinView, new PinChangedEventArg(pinView, (string)newValue));
             pinView?.TrySubmit();
         }
