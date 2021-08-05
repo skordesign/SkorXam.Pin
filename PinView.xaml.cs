@@ -47,7 +47,7 @@ namespace SkorXam.Pin
         }
         public static readonly BindableProperty DotColorProperty =
             BindableProperty.Create(nameof(DotColor), typeof(Color), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
-                defaultValue: Color.Red);
+                defaultValue: Color.Red, propertyChanged: OnPinAppearanceChanged);
         public double DotSize
         {
             get => (double)GetValue(DotSizeProperty);
@@ -63,7 +63,7 @@ namespace SkorXam.Pin
         }
         public static readonly BindableProperty DotEmptyColorProperty =
             BindableProperty.Create(nameof(DotEmptyColor), typeof(Color), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
-                defaultValue: Color.White);
+                defaultValue: Color.White, propertyChanged: OnPinAppearanceChanged);
         public Color DotBorderColor
         {
             get => (Color)GetValue(DotBorderColorProperty);
@@ -71,7 +71,7 @@ namespace SkorXam.Pin
         }
         public static readonly BindableProperty DotBorderColorProperty =
             BindableProperty.Create(nameof(DotBorderColor), typeof(Color), typeof(PinView), defaultBindingMode: BindingMode.OneWay,
-                defaultValue: Color.Red);
+                defaultValue: Color.Red, propertyChanged: OnPinAppearanceChanged);
         public ICommand PinSubmitCommand
         {
             get => (ICommand)GetValue(PinSubmitCommandProperty);
@@ -194,6 +194,12 @@ namespace SkorXam.Pin
             pinView.RenderPin(newValue?.ToString() ?? string.Empty);
             pinView?.PinChanged?.Invoke(pinView, new PinChangedEventArg(pinView, (string)newValue));
             pinView?.TrySubmit();
+        }
+        private static void OnPinAppearanceChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (oldValue == newValue) return;
+            var pinView = (bindable as PinView);
+            pinView.RenderPin(pinView.Pin);
         }
         public void TrySubmit()
         {
